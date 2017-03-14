@@ -1,7 +1,7 @@
 package com.example.myapplicationtranslator.adapter;
 
 import android.content.Context;
-import android.media.Image;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.myapplicationtranslator.interfaze.OnRecyclerViewOnClickListener;
 import com.example.myapplicationtranslator.model.NotebookMarkItem;
+import com.marktony.translator.R;
 
 import java.util.ArrayList;
 
@@ -32,8 +33,8 @@ public class NotebookMarkItemAdapter extends RecyclerView.Adapter<NotebookMarkIt
     }
 
     @Override
-    public void ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-     return new ItemViewHolder(inflater.inflate(R.layout.notebook_mark_item, parent, false),mListener);
+    public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new ItemViewHolder(inflater.inflate(R.layout.notebook_mark_item,parent,false),listener);
     }
 
     @Override
@@ -51,13 +52,16 @@ public class NotebookMarkItemAdapter extends RecyclerView.Adapter<NotebookMarkIt
         this.listener = listetner;
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView tvOutput;
-        ImageView ivMarkStar,ivCopy,ivShare;
+        ImageView ivMarkStar;
+        ImageView ivCopy;
+        ImageView ivShare;
+
         OnRecyclerViewOnClickListener listener;
 
-        public ItemViewHolder(View itemView, final OnRecyclerViewOnClickListener listener){
+        public ItemViewHolder(View itemView, final OnRecyclerViewOnClickListener listener) {
             super(itemView);
 
             tvOutput = (TextView) itemView.findViewById(R.id.text_view_output);
@@ -68,35 +72,37 @@ public class NotebookMarkItemAdapter extends RecyclerView.Adapter<NotebookMarkIt
             this.listener = listener;
             itemView.setOnClickListener(this);
 
-            ivMarkStar.setOnClickListener(new View.OnClickListener(){
+            ivMarkStar.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view){
-                    listener.OnSubViewClick(ivMarkStar.getLayoutPosition());
+                public void onClick(View view) {
+                    listener.OnSubViewClick(ivMarkStar,getLayoutPosition());
                 }
             });
 
-            ivCopy.setOnClickListener(new View.OnClickListener(){
+            ivCopy.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view){
-                    listener.OnSubViewClick(ivCopy.getLayoutPosition());
+                public void onClick(View view) {
+                    listener.OnSubViewClick(ivCopy,getLayoutPosition());
                 }
             });
 
-            ivShare.setOnClickListener(new View.OnClickListener(){
+            ivShare.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view){
-                    listener.OnSubViewClick(ivShare.getLayoutPosition());
+                public void onClick(View view) {
+                    listener.OnSubViewClick(ivShare,getLayoutPosition());
                 }
             });
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (listener != null){
+                listener.OnItemClick(view,getLayoutPosition());
+            }
         }
     }
 
-    @Override
-    public void onClick(View view){
-        if(listener!=null){
-            listener.OnItemClick(view.getLayoutPosition())
-        }
-    }
 
 
 }

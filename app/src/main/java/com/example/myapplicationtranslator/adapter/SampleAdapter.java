@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.myapplicationtranslator.model.BingModel;
-import com.example.myapplicationtranslator.R;
+import com.marktony.translator.R;
 
 import java.util.ArrayList;
 

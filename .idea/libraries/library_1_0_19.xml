@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="library-1.0.19">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/library-1.0.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/src/libs/library-1.0.19.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

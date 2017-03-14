@@ -24,7 +24,7 @@ import com.example.myapplicationtranslator.constant.Constants;
 import com.example.myapplicationtranslator.model.BingModel;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import com.example.myapplicationtranslator.R;
+import com.marktony.translator.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;

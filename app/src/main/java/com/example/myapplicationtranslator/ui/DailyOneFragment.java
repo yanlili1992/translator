@@ -26,6 +26,7 @@ import com.bumptech.glide.Glide;
 import com.example.myapplicationtranslator.constant.Constants;
 import com.example.myapplicationtranslator.db.DBUtil;
 import com.example.myapplicationtranslator.db.NotebookDatabaseHelper;
+import com.marktony.translator.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -119,9 +120,9 @@ public class DailyOneFragment extends Fragment{
            textViewEng = (TextView) view.findViewById(R.id.text_view_eng);
            imageViewMain = (ImageView) view.findViewById(R.id.image_view_daily);
 
-           ivStar = (ImageView) view.findViewById(R.id.iamge_view_mark_star);
-           ivCopy = (ImageView) view.findViewById(R.id.iamge_view_copy);
-           ivShare = (ImageView) view.findViewById(R.id.iamge_view_share);
+           ivStar = (ImageView) view.findViewById(R.id.image_view_mark_star);
+           ivCopy = (ImageView) view.findViewById(R.id.image_view_copy);
+           ivShare = (ImageView) view.findViewById(R.id.image_view_share);
     }
 
     private void requestData(){

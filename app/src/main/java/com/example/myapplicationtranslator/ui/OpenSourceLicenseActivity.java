@@ -7,7 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.webkit.WebView;
 
-import com.example.myapplicationtranslator.R;
+import com.marktony.translator.R;
 
 /**
  * Created by liuht on 2017/3/13.
